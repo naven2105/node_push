@@ -34,6 +34,9 @@ app.post("/subscribe", (req, res) => {
     webPush.sendNotification(subscription,payload).catch(err => console.error(err));
 });
 
-const port = 5000;
+//const port = 5000; from: https://www.youtube.com/watch?v=HlYFW2zaYQM
 
-app.listen(port, () => console.log(`Server started on port ${port}`));
+// || is or use port 5000
+const port = process.env.PORT || 5000;
+
+app.listen(port, () => console.log(`Server started on port: ${port}`));
